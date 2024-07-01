@@ -6,6 +6,8 @@ import Project from "../../components/ui/Project";
 import { FcAbout } from "react-icons/fc";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { MdContactPhone } from "react-icons/md";
+import Footer from "../../components/ui/Footer";
+import About from "../../components/ui/About";
 
 export default function Home() {
   const navItems = [
@@ -25,8 +27,11 @@ export default function Home() {
       <div className="w-full max-w-7xl">
         <FloatingNav navItems={navItems} />
         <HeroSection />
+        <About />
         {/* <CopyEmailSection /> */}
         <Project />
+
+        <Footer />
       </div>
     </main>
   );

@@ -4,6 +4,7 @@ import React from "react";
 import { PinContainer } from "./pin";
 import { FaGithub, FaLocationArrow } from "react-icons/fa";
 import Link from "next/link";
+import { TbListDetails } from "react-icons/tb";
 
 const Project = () => {
   const data = [
@@ -60,7 +61,7 @@ const Project = () => {
   ];
 
   return (
-    <div className="py-80" id="project">
+    <div className="pt-32 pb-32" id="project">
       <h1 className="text-5xl font-bold py-10 text-center text-white z-10">
         Recent projects
       </h1>
@@ -103,7 +104,7 @@ const Project = () => {
               </p>
 
               <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
@@ -115,7 +116,7 @@ const Project = () => {
                       <img src={icon} alt="icon5" className="p-2" />
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 {item.githubClientLink && (
                   <Link
@@ -147,6 +148,15 @@ const Project = () => {
                       Live Site
                     </p>
                     <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  </div>
+                </Link>
+
+                <Link href={item.liveSite ? item.liveSite : "/"}>
+                  <div className="flex justify-center items-center">
+                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                      Details
+                    </p>
+                    <TbListDetails className="ms-3" color="#CBACF9" />
                   </div>
                 </Link>
               </div>
