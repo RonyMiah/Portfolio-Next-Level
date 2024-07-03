@@ -61,7 +61,7 @@ const Project = () => {
   ];
 
   return (
-    <div className="pt-32 pb-32" id="project">
+    <div className=" " id="project">
       <h1 className="text-5xl font-bold py-10 text-center text-white z-10">
         Recent projects
       </h1>

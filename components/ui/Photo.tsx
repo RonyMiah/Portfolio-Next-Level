@@ -29,14 +29,15 @@ const Photo = () => {
               ease: "easeInOut",
             },
           }}
-          className="w-[298px] h-[298px] xl:w-[298px] xl:h-[298px] mix-blend-lighten absolute mx-auto "
+          className="w-[398px] h-[398px] xl:w-[598px] xl:h-[598px] mix-blend-lighten mx-auto "
         >
           <Image
             src="https://static.vecteezy.com/system/resources/thumbnails/041/642/170/small_2x/ai-generated-portrait-of-handsome-smiling-young-man-with-folded-arms-isolated-free-png.png"
-            priority
-            quality={100}
-            fill
-            alt=""
+            
+           
+             width={400}
+             height={400}
+            alt="banner image"
             className="object-contain mx-auto "
           />
         </motion.div>

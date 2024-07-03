@@ -1,13 +1,16 @@
+
 import { FaBlogger, FaHome } from "react-icons/fa";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import { FloatingNav } from "../../components/ui/FloatingNav";
-import CopyEmailSection from "../../components/ui/CopyEmailSection";
 import Project from "../../components/ui/Project";
 import { FcAbout } from "react-icons/fc";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { MdContactPhone } from "react-icons/md";
 import Footer from "../../components/ui/Footer";
 import About from "../../components/ui/About";
+import { Skills } from "../../components/ui/Skills";
+import { Youtube } from "../../components/ui/Youtube";
+import ContactForm from "../../components/ui/ContactForm";
 
 export default function Home() {
   const navItems = [
@@ -30,7 +33,9 @@ export default function Home() {
         <About />
         {/* <CopyEmailSection /> */}
         <Project />
-
+        <Skills/>
+        <Youtube/>
+        <ContactForm/>
         <Footer />
       </div>
     </main>

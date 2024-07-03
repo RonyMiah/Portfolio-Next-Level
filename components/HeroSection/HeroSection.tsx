@@ -21,7 +21,7 @@ const HeroSection = () => {
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw] " fill="blue" />
       </div>
       <div
-        className="h-screen w-full dark:bg-black-100 bg-white 
+        className="h-[50vh] w-full dark:bg-black-100 bg-white 
        dark:bg-grid-white/[0.05] bg-grid-black/[0.2]  flex items-center justify-center absolute top-0 left-0 "
       >
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
@@ -44,12 +44,12 @@ const HeroSection = () => {
           </p>
           <div className="flex  justify-center items-center gap-6">
             <a href="#project">
-              <ContactButton title="Download Cv " />
+              <ContactButton title=" Get Resume " />
             </a>
 
             <a href="#project">
               <MagicButton
-                title="Show My Project"
+                title="My Project"
                 icon={<HiRocketLaunch />}
                 position="right"
               />
