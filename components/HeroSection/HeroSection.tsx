@@ -1,4 +1,4 @@
-
+"use client"
 import React from "react";
 import { Spotlight } from "../ui/Spotlight";
 import { TextGenerateEffect } from "../ui/TextGenerateEffect";
@@ -7,6 +7,10 @@ import { HiRocketLaunch } from "react-icons/hi2";
 import ContactButton from "../ui/ContactButton";
 
 const HeroSection = () => {
+  const handleDownload = () => {
+    window.location.href =
+      "https://drive.google.com/file/d/15HNPMgVHHflfj27ynNqe3aM7IUXXDvVX/view?usp=sharing";
+  };
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -26,26 +30,26 @@ const HeroSection = () => {
       >
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
-      <div className="flex justify-center relative my-20  z-10   ">
+      <div className="flex justify-center relative my-4  z-10   ">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center ">
-          <h2
+          {/* <h2
             className="uppercase tracking-widest text-xs text-center
            text-blue-100 max-w-80  "
           >
             Daynamic Web Magic with Next js
-          </h2>
+          </h2> */}
           <TextGenerateEffect
             className="text-center text-[40px] md:text-5xl lg:text-6xl "
-            words="Hello This is Jhon and Welcome to My Prothfolio !"
+            words="As a Junior Full Stack Developer, I empower web solutions."
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg  lg:text-2xl">
             {" "}
             Hi, I &apos;m Rony Miah, A Junior Full Stack Developer{" "}
           </p>
           <div className="flex  justify-center items-center gap-6">
-            <a href="#project">
+            <span onClick={handleDownload}>
               <ContactButton title=" Get Resume " />
-            </a>
+            </span>
 
             <a href="#project">
               <MagicButton

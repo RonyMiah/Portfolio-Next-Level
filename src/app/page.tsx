@@ -11,6 +11,8 @@ import About from "../../components/ui/About";
 import { Skills } from "../../components/ui/Skills";
 import { Youtube } from "../../components/ui/Youtube";
 import ContactForm from "../../components/ui/ContactForm";
+import Experience from "../../components/ui/Exprience";
+
 
 export default function Home() {
   const navItems = [
@@ -33,9 +35,10 @@ export default function Home() {
         <About />
         {/* <CopyEmailSection /> */}
         <Project />
-        <Skills/>
-        <Youtube/>
-        <ContactForm/>
+        <Skills />
+        <Experience />
+        <Youtube />
+        <ContactForm />
         <Footer />
       </div>
     </main>

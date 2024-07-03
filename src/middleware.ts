@@ -45,13 +45,13 @@ export function middleware(request: NextRequest) {
     decodedData = jwtDecode(accessToken) as any;
   }
 
-  console.log("=================", decodedData)
+  // console.log("=================", decodedData)
 
 
 
 
   const role = decodedData?.role;
-  console.log(role, 'Role ....');
+  // console.log(role, 'Role ....');
 
   //   if (role === 'ADMIN' && pathname.startsWith('/dashboard/admin')) {
   //     return NextResponse.next();

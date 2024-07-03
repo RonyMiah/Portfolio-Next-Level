@@ -24,7 +24,7 @@ const ContactForm = () => {
   };
 
   return (
-    <>
+    <div className="-mt-32 ">
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
@@ -100,7 +100,7 @@ const ContactForm = () => {
           </Form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -61,11 +61,11 @@ const Project = () => {
   ];
 
   return (
-    <div className=" " id="project">
+    <div className=" lg:-mt-60 sm:pt-10" id="project">
       <h1 className="text-5xl font-bold py-10 text-center text-white z-10">
         Recent projects
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-64 mt-10">
+      <div className=" grid lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2   md:grid-cols-1   xl:gap-60 2xl:gap-60 mt-10">
         {data.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[100vw]"

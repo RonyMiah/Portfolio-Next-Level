@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import bannerImage from "../../public/bannerpic.png";
 
 const Photo = () => {
   return (
@@ -29,14 +30,12 @@ const Photo = () => {
               ease: "easeInOut",
             },
           }}
-          className="w-[398px] h-[398px] xl:w-[598px] xl:h-[598px] mix-blend-lighten mx-auto "
+          className=" xl:w-[700px] xl:h-[700px] mix-blend-lighten mx-auto "
         >
           <Image
-            src="https://static.vecteezy.com/system/resources/thumbnails/041/642/170/small_2x/ai-generated-portrait-of-handsome-smiling-young-man-with-folded-arms-isolated-free-png.png"
-            
-           
-             width={400}
-             height={400}
+            src={bannerImage}
+            width={900}
+            height={900}
             alt="banner image"
             className="object-contain mx-auto "
           />
@@ -44,9 +43,9 @@ const Photo = () => {
       </motion.div>
       {/* Circle  */}
       {/* <motion.svg
-        // className="w-[60vh] h-[58vh] "
-        // fill="transparent"
-        // xmlns="http/www.w3.org/2000/svg"
+        className="w-[60vh] h-[58vh] "
+        fill="transparent"
+        xmlns="http/www.w3.org/2000/svg"
       >
         <motion.circle
         className="w-[300px] h-[300px]"

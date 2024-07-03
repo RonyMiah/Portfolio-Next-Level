@@ -16,58 +16,45 @@ import React, { useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
+import axios from "axios";
 
-const lostItemCategory = [
-  "Walet",
-  "Key",
-  "Mobail",
-  "Laptop",
-  "Bike",
-  "Car",
-  "Others",
-];
 
-//Zod Validation
 
-const lostItemValidationSchema = z.object({
-  title: z.string().min(1, "Titel Required !"),
-  des: z.string().min(1, "Description is Required !"),
-  img: z.string().min(1, "Image Url is Required !"),
-  link: z.string().min(1, "Github Profile Url is Required !"),
-  githubClientLink: z.string().min(1, "github Client URL is Required !"),
-  githubServerLink: z.string().min(1, "github Server URL is Required !"),
-  liveSite: z.string().min(1, "Live Site Url is Required !"),
-});
-
-// .min(1, 'Image URL Required !')
 const AddSkills = () => {
   const router = useRouter();
   const [error, setError] = useState("");
 
   //submit Handaller
   const registerHandleSubmit = async (values: FieldValues) => {
-    // console.log(values);
-    // try {
-    //   const res = await createLostItem(values).unwrap();
-    //   if (res?.id) {
-    //     toast.success("Lost Property Submit Successfully !");
-    //     router.push("/mylostitems");
-    //   }
-    //   console.log("Response", res);
-    // } catch (error: any) {
-    //   console.log(error);
-    // }
+    if (values.title.trim() === "") {
+      toast.error("  title is required !!");
+      return;
+    }
+
+
+    if (values.description.trim() === "") {
+      toast.error("Description content is required !!");
+      return;
+    }
+
+    //submit the form one server
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/v1/skill/create-skill",
+        values
+      );
+      if (response.data.success) {
+        toast.success("Skill Created Successfully ");
+        values.title= ""
+        values.description= ""
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
-  const defaultValues = {
-    title: "",
-    des: "",
-    img: "",
-    link: "",
-    githubClientLink: "",
-    githubServerLink: "",
-    liveSite: "",
-  };
+ 
 
   return (
     <div className="   ">
@@ -86,11 +73,7 @@ const AddSkills = () => {
         </Box>
 
         <Box>
-          <ReuseableForm
-            onSubmit={registerHandleSubmit}
-            resolver={zodResolver(lostItemValidationSchema)}
-            defaultValues={defaultValues}
-          >
+          <ReuseableForm onSubmit={registerHandleSubmit}>
             <Grid container spacing={2} my={1}>
               <Grid item md={6} xs={12}>
                 <ReuseableInput
@@ -104,54 +87,9 @@ const AddSkills = () => {
 
               <Grid item md={6} xs={12}>
                 <ReuseableInput
-                  name="des"
+                  name="description"
                   fullWidth={true}
                   label="Description "
-                  type="text"
-                  size="small"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <ReuseableInput
-                  name="img"
-                  fullWidth={true}
-                  label="Image URL"
-                  type="text"
-                  size="small"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <ReuseableInput
-                  name="link"
-                  fullWidth={true}
-                  label="Main Github URL"
-                  type="text"
-                  size="small"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <ReuseableInput
-                  name="githubClientLink"
-                  fullWidth={true}
-                  label="Github Client URL"
-                  type="text"
-                  size="small"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <ReuseableInput
-                  name="githubServerLink"
-                  fullWidth={true}
-                  label="Github Server URL"
-                  type="text"
-                  size="small"
-                />
-              </Grid>
-              <Grid item md={6} xs={12}>
-                <ReuseableInput
-                  name="liveSite"
-                  fullWidth={true}
-                  label=" Deploy Website Live URL"
                   type="text"
                   size="small"
                 />

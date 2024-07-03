@@ -11,7 +11,7 @@ const About = () => {
   return (
     <div className="grid lg:grid-cols-2  md:grid-cols-1 mt-10 ">
       <div className="text-center xl:text-left order-2 xl:order-none mt-10 ">
-        <div className="  ">
+        <div >
           <p>
             <span className="text-purple text-5xl pt-2"> Hey, </span>
             <span className="text-white text-5xl pb-2">
