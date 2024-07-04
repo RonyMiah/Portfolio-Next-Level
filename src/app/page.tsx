@@ -23,7 +23,7 @@ export default function Home() {
       link: "/#project",
       icon: <AiOutlineFundProjectionScreen />,
     },
-    { name: "Blog", link: "/#blog", icon: <FaBlogger /> },
+    { name: "Blog", link: "/blog", icon: <FaBlogger /> },
     { name: "Contact", link: "/#contact", icon: <MdContactPhone /> },
   ];
 

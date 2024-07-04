@@ -1,77 +1,98 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PinContainer } from "./pin";
 import { FaGithub, FaLocationArrow } from "react-icons/fa";
 import Link from "next/link";
 import { TbListDetails } from "react-icons/tb";
 
 const Project = () => {
-  const data = [
-    {
-      id: 1,
-      title: "3D Solar System Planets to Explore",
-      des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-      img: "/p1.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-      link: "https://github.com/adrianhajdin?tab=repositories",
-      githubClientLink: "asdf",
-      githubServerLink: "asdf",
-      liveSite: "",
-    },
-    {
-      id: 2,
-      title: "Yoom - Video Conferencing App",
-      des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-      img: "/p2.svg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-      link: "https://github.com/adrianhajdin/zoom-clone",
-      githubClientLink: "sdafds",
-      githubServerLink: "sadf",
-      liveSite: "",
-    },
-    {
-      id: 3,
-      title: "AI Image SaaS - Canva Application",
-      des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-      img: "/p3.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-      link: "https://github.com/adrianhajdin/ai_saas_app",
-      githubClientLink: "asdf",
-      githubServerLink: "sadf",
-      liveSite: "",
-    },
-    {
-      id: 4,
-      title: "Animated Apple Iphone 3D Website",
-      des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-      img: "/p4.svg",
-      iconLists: [
-        "/next.svg",
-        "/tail.svg",
-        "/ts.svg",
-        "/three.svg",
-        "/gsap.svg",
-      ],
-      link: "https://github.com/adrianhajdin/iphone",
-      githubClientLink: "sadf",
-      githubServerLink: "asdf",
-      liveSite: "",
-    },
-  ];
+  // const data = [
+  //   {
+  //     id: 1,
+  //     title: "3D Solar System Planets to Explore",
+  //     des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+  //     img: "/p1.svg",
+  //     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+  //     link: "https://github.com/adrianhajdin?tab=repositories",
+  //     githubClientLink: "asdf",
+  //     githubServerLink: "asdf",
+  //     liveSite: "",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Yoom - Video Conferencing App",
+  //     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+  //     img: "/p2.svg",
+  //     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+  //     link: "https://github.com/adrianhajdin/zoom-clone",
+  //     githubClientLink: "sdafds",
+  //     githubServerLink: "sadf",
+  //     liveSite: "",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "AI Image SaaS - Canva Application",
+  //     des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+  //     img: "/p3.svg",
+  //     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+  //     link: "https://github.com/adrianhajdin/ai_saas_app",
+  //     githubClientLink: "asdf",
+  //     githubServerLink: "sadf",
+  //     liveSite: "",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Animated Apple Iphone 3D Website",
+  //     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+  //     img: "/p4.svg",
+  //     iconLists: [
+  //       "/next.svg",
+  //       "/tail.svg",
+  //       "/ts.svg",
+  //       "/three.svg",
+  //       "/gsap.svg",
+  //     ],
+  //     link: "https://github.com/adrianhajdin/iphone",
+  //     githubClientLink: "sadf",
+  //     githubServerLink: "asdf",
+  //     liveSite: "",
+  //   },
+  // ];
 
+   const [data, setProjectsData] = useState([]);
+
+   useEffect(() => {
+     const fetchProjects = async () => {
+       try {
+         const res = await fetch(
+           "https://prothfolio-backend.vercel.app/api/v1/project"
+         );
+         const data = await res.json();
+         setProjectsData(data?.data);
+       } catch (error) {
+         console.error("Error fetching data:", error);
+       }
+     };
+
+     fetchProjects();
+   }, []);
+
+   if (!data) {
+     <h2>Loading ....</h2>;
+   }
   return (
     <div className=" lg:-mt-60 sm:pt-10" id="project">
       <h1 className="text-5xl font-bold py-10 text-center text-white z-10">
         Recent projects
       </h1>
       <div className=" grid lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2   md:grid-cols-1   xl:gap-60 2xl:gap-60 mt-10">
-        {data.map((item) => (
+        {data.map((item: any) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[100vw]"
             key={item.id}
           >
-            <PinContainer title="Visit" href={item.link}>
+            <PinContainer title="GitHub" href={item.link}>
               <div
                 className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[20vh] 
               lg:w-[60vh] lg:h-[40vh] mb-10"
@@ -151,7 +172,7 @@ const Project = () => {
                   </div>
                 </Link>
 
-                <Link href={item.liveSite ? item.liveSite : "/"}>
+                <Link href={`/projectdetails/${item.id}`}>
                   <div className="flex justify-center items-center">
                     <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                       Details
