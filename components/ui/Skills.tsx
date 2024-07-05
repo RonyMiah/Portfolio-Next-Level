@@ -27,7 +27,7 @@ export  function Skills () {
      <h2>Loading ....</h2>
    }
 
-   console.log(projects);
+  //  console.log(projects);
   return (
     <div className="max-w-5xl mx-auto px-8 pt-20">
       <h1 className="text-4xl font-bold pt-10 text-center text-white z-10">

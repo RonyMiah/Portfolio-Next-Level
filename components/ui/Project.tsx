@@ -82,7 +82,7 @@ const Project = () => {
      <h2>Loading ....</h2>;
    }
   return (
-    <div className=" lg:-mt-60 sm:pt-10" id="project">
+    <div className=" lg:-mt-0 sm:pt-10" id="project">
       <h1 className="text-5xl font-bold py-10 text-center text-white z-10">
         Recent projects
       </h1>

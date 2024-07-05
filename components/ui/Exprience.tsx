@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
 import { Button } from "../ui/moving-border";
@@ -34,6 +34,29 @@ const Experience = () => {
         thumbnail: "/exp4.svg",
       },
     ];
+
+
+const [data, setProjects] = useState([]);
+
+useEffect(() => {
+  const fetchProjects = async () => {
+    try {
+      const res = await fetch("http://localhost:8000/api/v1/experience");
+      const data = await res.json();
+      setProjects(data?.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  fetchProjects();
+}, []);
+
+if (!data) {
+  <h2>Loading ....</h2>;
+}
+
+
   return (
     <div className="py-20 w-full">
       <h1 className="heading">
@@ -41,7 +64,7 @@ const Experience = () => {
       </h1>
 
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {workExperience.map((card : any) => (
+        {data.map((card: any) => (
           <Button
             key={card.id}
             //   random duration will be fun , I think , may be not

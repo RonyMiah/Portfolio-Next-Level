@@ -36,7 +36,13 @@ export function BlogPostCard({ post }:any) {
           </h1>
 
           {jsxContent.content}
+         
 
+         <br />
+         
+         
+         <h2 className="text-center text-xl text-purple font-extrabold mx-auto my-10 
+         ">-----------------------------------------------------------------------</h2>
           {/* Meaty part - Meteor effect */}
           <Meteors number={20} />
         </div>
