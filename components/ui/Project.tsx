@@ -5,6 +5,7 @@ import { PinContainer } from "./pin";
 import { FaGithub, FaLocationArrow } from "react-icons/fa";
 import Link from "next/link";
 import { TbListDetails } from "react-icons/tb";
+import Image from "next/image";
 
 const Project = () => {
   // const data = [
@@ -101,9 +102,11 @@ const Project = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <Image width={400} height={400} src="/bg.png" alt="bgimg" />
                 </div>
-                <img
+                <Image
+                  width={800}
+                  height={400}
                   src={item.img}
                   alt="cover"
                   className="z-10 absolute bottom-0"

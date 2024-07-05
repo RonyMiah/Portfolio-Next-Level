@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 
 import { Button } from "../ui/moving-border";
+import Image from "next/image";
 
 const Experience = () => {
     const workExperience = [
@@ -41,7 +42,9 @@ const [data, setProjects] = useState([]);
 useEffect(() => {
   const fetchProjects = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/v1/experience");
+      const res = await fetch(
+        "https://prothfolio-backend.vercel.app/api/v1/experience"
+      );
       const data = await res.json();
       setProjects(data?.data);
     } catch (error) {
@@ -64,7 +67,7 @@ if (!data) {
       </h1>
 
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {data.map((card: any) => (
+        {data?.map((card : any) => (
           <Button
             key={card.id}
             //   random duration will be fun , I think , may be not
@@ -83,7 +86,9 @@ if (!data) {
             className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
-              <img
+              <Image
+              width={400}
+              height={400}
                 src={card.thumbnail}
                 alt={card.thumbnail}
                 className="lg:w-32 md:w-20 w-16"
