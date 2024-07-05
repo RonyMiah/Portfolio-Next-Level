@@ -1,6 +1,7 @@
 "use client"
 
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -50,7 +51,7 @@ const ProjectDetails = ({ params }: any) => {
     <div className="min-h-screen bg-gray-100 p-5">
       <Link href="/">
         <button className="mb-4 text-2xl text-black px-4 py-2 rounded 0">
-          <FaBackward /> 
+          <FaBackward />
         </button>
       </Link>
       <div className="min-h-screen bg-gray-100 p-5 flex flex-col items-center">
@@ -59,10 +60,12 @@ const ProjectDetails = ({ params }: any) => {
             key={project.id}
             className="bg-white shadow-md rounded-lg p-6 max-w-4xl w-full"
           >
-            <img
+            <Image
+              width={1200}
+              height={800}
               src={project.img}
               alt={project.title}
-              className="w-full h-64 object-cover rounded-md mb-6"
+              className="w-full h-64 object-contain rounded-md mb-6"
             />
             <h1 className="text-2xl font-bold text-black-100 mb-4">
               {project.title}
