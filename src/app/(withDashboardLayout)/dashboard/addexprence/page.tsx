@@ -45,7 +45,7 @@ const AddExprence = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/experience/create-experience",
+          "https://prothfolio-backend.vercel.app/api/v1/experience/create-experience",
           values
         );
         if (response.data.success) {

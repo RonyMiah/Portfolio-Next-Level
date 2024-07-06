@@ -66,7 +66,7 @@ const AddPost = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/blog/create-blog",
+        "https://prothfolio-backend.vercel.app/api/v1/blog/create-blog",
         post
       );
       if (response.data.success) {

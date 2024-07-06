@@ -32,7 +32,7 @@ const ProjectPage = () => {
     // console.log(values)
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/project/create-project",
+        "https://prothfolio-backend.vercel.app/api/v1/project/create-project",
         values
       );
       if (response.data.success){
