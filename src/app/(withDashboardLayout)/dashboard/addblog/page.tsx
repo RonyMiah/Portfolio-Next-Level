@@ -10,8 +10,11 @@ import {
   Button,
   Container,
 } from "reactstrap";
+import dynamic from "next/dynamic";
 
-import JoditEditor from "jodit-react";
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
+
+
 import { useRef } from "react";
 import { toast } from "sonner";
 import axios from "axios";

@@ -1,3 +1,4 @@
+"use client";
 
 import { FaBlogger, FaHome } from "react-icons/fa";
 import HeroSection from "../../components/HeroSection/HeroSection";
@@ -12,7 +13,6 @@ import { Skills } from "../../components/ui/Skills";
 import { Youtube } from "../../components/ui/Youtube";
 import ContactForm from "../../components/ui/ContactForm";
 import Experience from "../../components/ui/Exprience";
-
 
 export default function Home() {
   const navItems = [
