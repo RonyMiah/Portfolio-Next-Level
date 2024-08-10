@@ -9,7 +9,7 @@ import ContactButton from "../ui/ContactButton";
 const HeroSection = () => {
   const handleDownload = () => {
     window.location.href =
-      "https://drive.google.com/file/d/15HNPMgVHHflfj27ynNqe3aM7IUXXDvVX/view?usp=sharing";
+      "https://drive.google.com/file/d/1JCV4AMcvRzoigTuqjIDozGllaQ94jmqH/view?usp=sharing";
   };
   return (
     <div className="pb-20 pt-36">
